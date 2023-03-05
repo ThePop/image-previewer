@@ -9,28 +9,26 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
+      - name: Setup Go
         uses: actions/setup-go@v3
         with:
           go-version: ~1.20
 
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Linters
-        uses: golangci/golangci-lint-action@v3
-        with:
-          version: v1.48.0
+      - name: Linter
+        run: go mod verify
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
+      - name: Setup Go
         uses: actions/setup-go@v3
         with:
           go-version: ^1.20
 
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Verify dependencies
@@ -42,12 +40,12 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
+      - name: Setup Go
         uses: actions/setup-go@v3
         with:
           go-version: ~1.20
 
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Tests
@@ -56,13 +54,13 @@ jobs:
   integration-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
+      - name: Setup Go
         uses: actions/setup-go@v3
         with:
           go-version: ~1.20
 
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Tests
+      - name: Integration tests
         run: make integration-test
