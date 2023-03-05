@@ -1,3 +1,5 @@
+[![ci](https://github.com/ThePop/image-previewer/actions/workflows/ci.yml/badge.svg)](https://github.com/ThePop/image-previewer/actions/workflows/tests.yml)
+
 # image-previewer
 
 Проект [Превьюер изображений](https://github.com/OtusGolang/final_project/blob/master/03-image-previewer.md)
